@@ -1,4 +1,6 @@
 <%= form_with model: article do |form| %>
+    <div class="card" style="width: 30rem;">
+    <div class="card-body">
     <div>
         <%= form.label :title %><br>
         <%= form.text_field :title %>
@@ -16,6 +18,13 @@
     </div>
 
     <div>
-        <%= form.submit %>
+        <%= form.label :status %><br>
+        <%= form.select :status, ['public', 'private', 'archived'], selected: 'public' %>
+    </div>
+
+    <div>
+        <button type="button" class="btn btn-success"><%= form.submit %></button>
+    </div>
+    </div>
     </div>
 <% end %>

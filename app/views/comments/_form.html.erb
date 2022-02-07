@@ -1,0 +1,21 @@
+<%= form_with model: [ @article, @article.comments.build ] do |form| %>
+    <div class="card" style="width: 30rem;">
+    <div class="card-body">
+    <p>
+        <%= form.label :commenter %><br>
+        <%= form.text_field :commenter %>
+    </p>
+    <p>
+        <%= form.label :body %><br>
+        <%= form.text_area :body %>
+    </p>
+    <p>
+        <button type="button" class="btn btn-success"><%= form.submit %></button>
+    </p>
+
+    <p>
+        <%= form.label :status %><br>
+        <%= form.select :status, ['public', 'private', 'archived'], selected: 'public' %>
+    </p>
+    </div>
+<% end %>
